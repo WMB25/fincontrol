@@ -1,0 +1,3 @@
+com/fincontrol/application/usecase/user/dto/UserRegisterRequest.class
+com/fincontrol/application/usecase/user/dto/UserResponseDTO.class
+com/fincontrol/application/usecase/user/UserRegisterUseCase.class
