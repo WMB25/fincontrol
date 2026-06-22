@@ -1,0 +1,35 @@
+name: Fincontrol - CI Pipeline
+
+on:
+  push:
+    branches:
+      - [main, develop]
+  pull_request:
+    branches:
+      - [main, develop]
+
+jobs:
+  name: Pipeline de Intecgração Continua
+  runs-on: ubuntu-latest
+  steps:
+    - name: Verificação de Codigo
+      uses: actions/checkout@v4
+
+    - name: Configurando JDK 21
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: 'maven'
+    
+    - name: Compilar Projeto
+      run: mvn clean compile
+
+    - name: Executar Testes
+      run: mvn test
+
+    - name: Qualidade de Codigo e Cobertura
+      run: echo "Cobertura JaCoCo; Qualidade SonarQube"
+
+    - name: Gerar Artefatos
+      run: mvn package -DskipTests

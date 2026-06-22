@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: fincontrol-postgres
+    environment:
+      POSTGRES_USER: fincontrol-user
+      POSTGRES_PASSWORD: fincontrol-password
+      POSTGRES_DB: fincontrol-db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - fincontrol-network
+
+networks:
+  fincontrol-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
