@@ -1,1 +1,3 @@
 /home/wmb-work-space/WorkSpace/Projects/fincontrol/fincontrol-api/src/main/java/com/fincontrol/FinControlApplication.java
+/home/wmb-work-space/WorkSpace/Projects/fincontrol/fincontrol-api/src/main/java/com/fincontrol/api/config/UserConfig.java
+/home/wmb-work-space/WorkSpace/Projects/fincontrol/fincontrol-api/src/main/java/com/fincontrol/api/controller/UserController.java

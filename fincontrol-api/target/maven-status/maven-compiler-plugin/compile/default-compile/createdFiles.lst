@@ -1,1 +1,3 @@
 com/fincontrol/FinControlApplication.class
+com/fincontrol/api/controller/UserController.class
+com/fincontrol/api/config/UserConfig.class
