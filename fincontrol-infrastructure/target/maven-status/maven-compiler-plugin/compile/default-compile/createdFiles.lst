@@ -1,0 +1,4 @@
+com/fincontrol/infrastructure/persistence/user/SpringDataUserRepository.class
+com/fincontrol/infrastructure/persistence/user/UserEntity$UserEntityBuilder.class
+com/fincontrol/infrastructure/persistence/user/UserEntity.class
+com/fincontrol/infrastructure/persistence/user/UserRepositoryImpl.class
