@@ -1,18 +1,21 @@
 package com.fincontrol.application.usecase.user;
 
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+import com.fincontrol.application.security.PasswordEncoderPort;
 import com.fincontrol.application.usecase.user.dto.UserRegisterRequest;
 import com.fincontrol.application.usecase.user.dto.UserResponseDTO;
 import com.fincontrol.domain.entity.User;
 import com.fincontrol.domain.repository.IUserRepository;
 
-import java.time.LocalDateTime;
-import java.util.UUID;
-
 public class UserRegisterUseCase {
     private final IUserRepository userRepository;
+    private final PasswordEncoderPort passwordEncoderPort;
 
-    public UserRegisterUseCase(IUserRepository userRepository) {
+    public UserRegisterUseCase(IUserRepository userRepository, PasswordEncoderPort passwordEncoderPort) {
         this.userRepository = userRepository;
+        this.passwordEncoderPort = passwordEncoderPort;
     }
 
     public UserResponseDTO execute(UserRegisterRequest request) {
@@ -25,7 +28,7 @@ public class UserRegisterUseCase {
             .id(UUID.randomUUID())
             .name(request.name())
             .email(request.email())
-            .password(request.password())
+            .password(passwordEncoderPort.encode(request.password()))
             .createdAt(LocalDateTime.now())
             .updatedAt(LocalDateTime.now())
             .build();
