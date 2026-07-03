@@ -7,6 +7,7 @@ import com.fincontrol.application.security.PasswordEncoderPort;
 import com.fincontrol.application.usecase.user.dto.UserRegisterRequest;
 import com.fincontrol.application.usecase.user.dto.UserResponseDTO;
 import com.fincontrol.domain.entity.User;
+import com.fincontrol.domain.exceptions.EmailAlreadyExistsException;
 import com.fincontrol.domain.repository.IUserRepository;
 
 public class UserRegisterUseCase {
@@ -21,7 +22,7 @@ public class UserRegisterUseCase {
     public UserResponseDTO execute(UserRegisterRequest request) {
         if (userRepository.existsByEmail(request.email()))
         {
-            throw new RuntimeException("O Email já esta cadastrado no sistema!");
+            throw new EmailAlreadyExistsException("O Email já esta cadastrado no sistema!");
         }
 
         User user = User.builder()

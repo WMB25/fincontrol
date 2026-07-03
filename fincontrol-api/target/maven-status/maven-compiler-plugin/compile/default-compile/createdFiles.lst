@@ -1,4 +1,6 @@
 com/fincontrol/api/controller/UserController.class
+com/fincontrol/api/exception/GlobalExceptionHandler.class
 com/fincontrol/FinControlApplication.class
+com/fincontrol/api/exception/StandardError.class
 com/fincontrol/api/config/UserConfig.class
 com/fincontrol/api/controller/AuthController.class

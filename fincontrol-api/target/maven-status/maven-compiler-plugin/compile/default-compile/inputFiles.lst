@@ -2,3 +2,5 @@
 /home/wmb-work-space/WorkSpace/Projects/fincontrol/fincontrol-api/src/main/java/com/fincontrol/api/config/UserConfig.java
 /home/wmb-work-space/WorkSpace/Projects/fincontrol/fincontrol-api/src/main/java/com/fincontrol/api/controller/AuthController.java
 /home/wmb-work-space/WorkSpace/Projects/fincontrol/fincontrol-api/src/main/java/com/fincontrol/api/controller/UserController.java
+/home/wmb-work-space/WorkSpace/Projects/fincontrol/fincontrol-api/src/main/java/com/fincontrol/api/exception/GlobalExceptionHandler.java
+/home/wmb-work-space/WorkSpace/Projects/fincontrol/fincontrol-api/src/main/java/com/fincontrol/api/exception/StandardError.java
