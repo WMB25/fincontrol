@@ -19,9 +19,9 @@ public class LoginUseCase {
     }
     
     public TokenResponse execute(UserLoginRequest request) {
-        User user = userRepository.findByEmail(request.email()).orElseThrow(() -> new RuntimeException("Credenciais inválidas"));
+        User user = userRepository.findByEmail(request.email()).orElseThrow(() -> new RuntimeException("Credenciais inválidas."));
         if(!passwordEncoderPort.matches(request.password(), user.getPassword())) {
-            throw new RuntimeException("Credenciais invalidas");
+            throw new RuntimeException("Credenciais inválidas.");
         }
         String token = tokenServicePort.generateToken(user);
         return new TokenResponse(token, "Bearer");
