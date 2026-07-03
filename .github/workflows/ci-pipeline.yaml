@@ -25,9 +25,8 @@ jobs:
       - name: Compilar o Projeto
         run: mvn clean compile
 
-      # 3. Executar testes (Comentado até criarmos os primeiros testes)
-      # - name: Executar Testes de Unidade
-      #   run: mvn test
+      - name: Executar Testes de Unidade
+        run: mvn test
 
       - name: Log de Etapas Futuras (Qualidade e Cobertura)
         run: echo "Cobertura JaCoCo e Qualidade SonarQube serao ativados nas proximas."

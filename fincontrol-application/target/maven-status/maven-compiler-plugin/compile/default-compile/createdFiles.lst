@@ -1,3 +1,8 @@
+com/fincontrol/application/security/PasswordEncoderPort.class
+com/fincontrol/application/usecase/user/UserRegisterUseCase.class
+com/fincontrol/application/usecase/user/dto/UserLoginRequest.class
 com/fincontrol/application/usecase/user/dto/UserRegisterRequest.class
 com/fincontrol/application/usecase/user/dto/UserResponseDTO.class
-com/fincontrol/application/usecase/user/UserRegisterUseCase.class
+com/fincontrol/application/security/TokenServicePort.class
+com/fincontrol/application/usecase/user/LoginUseCase.class
+com/fincontrol/application/usecase/user/dto/TokenResponse.class

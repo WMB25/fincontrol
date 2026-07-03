@@ -1,4 +1,7 @@
-com/fincontrol/infrastructure/persistence/user/SpringDataUserRepository.class
 com/fincontrol/infrastructure/persistence/user/UserEntity$UserEntityBuilder.class
 com/fincontrol/infrastructure/persistence/user/UserEntity.class
+com/fincontrol/infrastructure/security/BCryptPasswordEncoder.class
+com/fincontrol/infrastructure/security/BCryptPasswordEncoderAdpter.class
 com/fincontrol/infrastructure/persistence/user/UserRepositoryImpl.class
+com/fincontrol/infrastructure/persistence/user/SpringDataUserRepository.class
+com/fincontrol/infrastructure/security/JwtTokenServiceAdapter.class

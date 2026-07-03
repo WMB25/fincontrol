@@ -1,3 +1,4 @@
 com/fincontrol/domain/entity/User$UserBuilder.class
-com/fincontrol/domain/entity/User.class
 com/fincontrol/domain/repository/IUserRepository.class
+com/fincontrol/domain/exceptions/EmailAlreadyExistsException.class
+com/fincontrol/domain/entity/User.class
