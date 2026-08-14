@@ -4,6 +4,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fincontrol.application.security.TokenServicePort;
 import com.fincontrol.domain.entity.User;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -11,10 +12,16 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
+import com.auth0.jwt.exceptions.JWTCreationException;
+import com.auth0.jwt.exceptions.JWTVerificationException;
+
 @Component
 public class JwtTokenServiceAdapter implements TokenServicePort {
-    @Value("${api.security.token.secret:fincontrol-secret-key-super-safe}")
+    @Value("${api.security.token.secret}")
     private String secretKey;
+
+    @Value("${api.security.token.expiration-hours:2}")
+    private int expirationHours;
 
     @Override
     public String generateToken(User user) {
@@ -22,10 +29,12 @@ public class JwtTokenServiceAdapter implements TokenServicePort {
             Algorithm algorithm = Algorithm.HMAC256(secretKey);
             return JWT.create()
                     .withIssuer("fincontrol-api")
-                    .withSubject(user.getEmail())
+                    .withSubject(user.getId().toString())
+                    .withClaim("email", user.getEmail())
+                    .withIssuedAt(Instant.now())
                     .withExpiresAt(generateExpirationDate()) // Token expires in 2 hours
                     .sign(algorithm);
-        } catch (Exception e) {
+        } catch (JWTCreationException e) {
             throw new RuntimeException("Erro ao gerar token JWT", e);
         }
     }
@@ -39,12 +48,12 @@ public class JwtTokenServiceAdapter implements TokenServicePort {
                     .build()
                     .verify(token)
                     .getSubject();
-        } catch (Exception e) {
-            return "";
+        } catch (JWTVerificationException e) {
+            return null;
         }
     }
 
     private Instant generateExpirationDate() {
-        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
+        return LocalDateTime.now().plusHours(expirationHours).toInstant(ZoneOffset.of("-03:00"));
     }
 }

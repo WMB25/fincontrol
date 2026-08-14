@@ -27,6 +27,7 @@
         
         <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
         <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+        
         <!-- Agrega relatórios de cobertura de todos os módulos -->
         <sonar.coverage.jacoco.xmlReportPaths>
             ${project.basedir}/fincontrol-common/target/site/jacoco/jacoco.xml,
@@ -117,6 +118,13 @@
                 <configuration>
                     <source>21</source>
                     <target>21</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.46</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
             <plugin>

@@ -5,3 +5,5 @@ com/fincontrol/infrastructure/security/BCryptPasswordEncoderAdpter.class
 com/fincontrol/infrastructure/persistence/user/UserRepositoryImpl.class
 com/fincontrol/infrastructure/persistence/user/SpringDataUserRepository.class
 com/fincontrol/infrastructure/security/JwtTokenServiceAdapter.class
+com/fincontrol/infrastructure/security/SecurityConfiguration.class
+com/fincontrol/infrastructure/security/SecurityFilter.class

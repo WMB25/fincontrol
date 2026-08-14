@@ -15,7 +15,6 @@ jobs:
       - name: Checkout Código
         uses: actions/checkout@v4
         with:
-          # Necessário para o SonarCloud analisar o histórico de commits (blame, etc.)
           fetch-depth: 0
 
       - name: Configurar Java 21
