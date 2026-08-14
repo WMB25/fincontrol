@@ -1,0 +1,5 @@
+api:
+  security:
+    token:
+      secret: ${JWT_SECRET:fincontrol-123456}
+      expiration-hours: ${JWT_EXPIRATION_HOURS:2}
